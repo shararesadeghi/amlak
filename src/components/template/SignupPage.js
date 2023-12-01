@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {useRouter} from 'next/navigation';
 import { Toaster,toast } from "react-hot-toast";
-import {TreeDots} from 'react-loader-spinner';
+import {ThreeDots } from 'react-loader-spinner';
 import styles from "@/template/SignupPage.module.css";
 
 const SignupPage = () => {
@@ -62,11 +62,11 @@ const SignupPage = () => {
         />
         {
           loading ? (
-            <TreeDots
+            <ThreeDots 
             height={45}
             color='#304ffe'
             ariaLabel="three-dots-loading"
-            wrapperStyle={{margin:auto}}
+            wrapperStyle={{margin:"auto"}}
             visible={true}
             />
           ): ( <button type="submit" onClick={signupHandler}>
