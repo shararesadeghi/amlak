@@ -5,7 +5,7 @@ import DashboardSideBar from "@/layout/DashboardSideBar";
 
 const DashboardLayout = async ({ children }) => {
     const session = await getServerSession(authOptions);
-    if(session) redirect("/signin");
+    if(!session) redirect("/signin");
   return <DashboardSideBar>{children}</DashboardSideBar>;
 };
 
