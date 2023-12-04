@@ -1,10 +1,8 @@
-
+import AddProfilePage from '@/template/AddProfilePage';
 
 const AddProfile = () => {
     return (
-        <div>
-            add
-        </div>
+       <AddProfilePage/>
     );
 };
 
