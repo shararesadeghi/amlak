@@ -1,5 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import User from "@/models/User";
+import MyProfilesPage from "@/template/MyProfilesPage";
 import connectDB from "@/utils/connectDB";
 import { getServerSession } from "next-auth";
 
@@ -8,7 +9,7 @@ import { getServerSession } from "next-auth";
     await connectDB();
     const session = await getServerSession(authOptions);
 
-    const user = await User.aggregate([{$match:{email:session.user.email}},{$lookup:{
+    const [user] = await User.aggregate([{$match:{email:session.user.email}},{$lookup:{
         from:"profiles",
         foreignField:"userId",
         localField:"_id",
@@ -16,7 +17,7 @@ import { getServerSession } from "next-auth";
 
     }}])
   return (
-    <div>MyProfiles</div>
+    <MyProfilesPage profiles={user.profiles}/>
   )
 }
 
