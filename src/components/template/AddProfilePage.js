@@ -64,6 +64,19 @@ const AddProfilePage = ({ data }) => {
     } else {
       toast.success(data.message);
       router.refresh();
+      setProfileData({
+        title: "",
+        description: "",
+        location: "",
+        phone: "",
+        price: "",
+        realState: "",
+        constructionDate: new Date(),
+        category: "",
+        rules: [],
+        amenities: [],
+      });
+      window.scrollTo(0,0);
     }
   };
   return (
