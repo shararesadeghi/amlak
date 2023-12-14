@@ -18,7 +18,7 @@ export async function DELETE(req, context) {
       );
     }
 
-    const user = await User.findOne({ emial: session.user.email });
+    const user = await User.findOne({ email: session.user.email });
     if (!user) {
       return NextResponse.json(
         { error: "حساب کاربری یافت نشد" },
