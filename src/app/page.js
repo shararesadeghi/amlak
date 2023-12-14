@@ -1,9 +1,8 @@
-
-
-export default function Home() {
+import HomePage from "@/template/HomePage"; 
+const Home = ()=> {
   return (
-    <main>
-     <h1>سلام</h1>
-    </main>
+   <HomePage/>
   )
 }
+
+export default Home;
