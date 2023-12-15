@@ -18,7 +18,7 @@ const Sidebar = () => {
       </p>
       <Link href="/buy-residential">همه</Link>
       {quiries.map((query) => (
-        <Link
+        <Link key={query}
           href={{
             pathname: "/buy-residential",
             query: { category: Object.keys(query) },
