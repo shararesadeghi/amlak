@@ -8,7 +8,7 @@ import styles from "@/module/Card.module.css";
 import Link from "next/link";
 import { sp } from "@/utils/replaceNumber";
 
-const Card = ({ data: { category, title, price, location } }) => {
+const Card = ({ data: {_id ,category, title, price, location } }) => {
   const icons = {
     villa: <RiHome3Line />,
     apartment: <MdApartment />,
@@ -25,7 +25,7 @@ const Card = ({ data: { category, title, price, location } }) => {
         {location}
       </p>
       <span>{sp(price)} تومان</span>
-      <Link href="/">
+      <Link href={`/buy-residential/${_id}`}>
         مشاهده آگهی
         <BiLeftArrowAlt />
       </Link>
