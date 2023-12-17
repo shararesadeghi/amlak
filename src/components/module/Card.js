@@ -1,7 +1,4 @@
-import { RiHome3Line } from "react-icons/ri";
-import { MdApartment } from "react-icons/md";
-import { BiStore } from "react-icons/bi";
-import { GiOfficeChair } from "react-icons/gi";
+import { icons } from "@/constans/icons";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import styles from "@/module/Card.module.css";
@@ -9,12 +6,7 @@ import Link from "next/link";
 import { sp } from "@/utils/replaceNumber";
 
 const Card = ({ data: {_id ,category, title, price, location } }) => {
-  const icons = {
-    villa: <RiHome3Line />,
-    apartment: <MdApartment />,
-    store: <BiStore />,
-    office: <GiOfficeChair />,
-  };
+ 
 
   return (
     <div className={styles.container}>
