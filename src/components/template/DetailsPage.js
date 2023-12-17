@@ -5,10 +5,11 @@ import { BiCalendarCheck, BiStore } from "react-icons/bi";
 import { RiHome3Line } from "react-icons/ri";
 import { MdApartment } from "react-icons/md";
 import { GiOfficeChair } from "react-icons/gi";
-import styles from "@/template/DetailsPage.module.css";
+import ShareButton from "@/module/ShareButton";
 import Title from "@/module/Title";
 import ItemList from "@/module/ItemList";
 import { e2p, sp } from "@/utils/replaceNumber";
+import styles from "@/template/DetailsPage.module.css";
 
 const DetailsPage = ({
   data: {
@@ -54,13 +55,14 @@ const DetailsPage = ({
       </div>
       <div className={styles.sidebar}>
         <div className={styles.realState}>
-          <SiHomebridge/>
+          <SiHomebridge />
           <p>املاک {realState}</p>
           <span>
-            <AiOutlinePhone/>
+            <AiOutlinePhone />
             {e2p(phone)}
           </span>
         </div>
+        <ShareButton />
         <div className={styles.price}>
           <p>
             {icons[category]}
@@ -68,7 +70,7 @@ const DetailsPage = ({
           </p>
           <p>{sp(price)} تومان</p>
           <p>
-            <BiCalendarCheck/>
+            <BiCalendarCheck />
             {new Date(constructionDate).toLocaleDateString("fa-IR")}
           </p>
         </div>
