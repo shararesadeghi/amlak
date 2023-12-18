@@ -1,5 +1,5 @@
 "use client";
-
+"use client";
 import Link from "next/link";
 import { FiLogIn } from "react-icons/fi";
 import { FaUserAlt } from "react-icons/fa";
