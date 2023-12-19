@@ -1,3 +1,4 @@
+import AdminCard from "@/module/AdminCard";
 import styles from "@/template/AdminPage.module.css";
 
 const AdminPage = ({ profiles }) => {
@@ -7,7 +8,7 @@ const AdminPage = ({ profiles }) => {
         <p className={styles.text}>هیچ آگهی در انتظار تاییدی وجود ندارد</p>
       )}
       {profiles.map((profile) => (
-        <p>{profile.title}</p>
+        <AdminCard key={profile._id} data={profile}/>
       ))}
     </div>
   );
